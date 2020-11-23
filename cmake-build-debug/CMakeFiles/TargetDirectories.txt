@@ -1,0 +1,3 @@
+C:/Users/crist/Documents/UPTC/4 SEMESTRE/Programacion III/C String Algorithms/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/crist/Documents/UPTC/4 SEMESTRE/Programacion III/C String Algorithms/cmake-build-debug/CMakeFiles/C_String_Algorithms.dir
+C:/Users/crist/Documents/UPTC/4 SEMESTRE/Programacion III/C String Algorithms/cmake-build-debug/CMakeFiles/edit_cache.dir
