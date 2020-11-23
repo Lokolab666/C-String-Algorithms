@@ -77,6 +77,9 @@
 		<Unit filename="C:/Users/crist/Documents/UPTC/4 SEMESTRE/Programacion III/C String Algorithms/main.c">
 			<Option target="C_String_Algorithms"/>
 		</Unit>
+		<Unit filename="C:/Users/crist/Documents/UPTC/4 SEMESTRE/Programacion III/C String Algorithms/prueba.h">
+			<Option target="C_String_Algorithms"/>
+		</Unit>
 		<Unit filename="C:/Users/crist/Documents/UPTC/4 SEMESTRE/Programacion III/C String Algorithms/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

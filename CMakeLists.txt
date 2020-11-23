@@ -3,4 +3,4 @@ project(C_String_Algorithms C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(C_String_Algorithms main.c)
+add_executable(C_String_Algorithms main.c prueba.h)
