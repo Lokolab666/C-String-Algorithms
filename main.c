@@ -116,9 +116,11 @@ void mainMenu(){
     int option;
 
     do {
+        system("cls");
         printf("%s", menu);
         scanf("%d", &option);
-
+        fflush(stdin);
+        
         switch (option) {
             case 1: proper();
                 break;
