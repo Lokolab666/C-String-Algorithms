@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
 #define MAXSTRING 1000
 
 char cadenaStr[MAXSTRING] = {0};
 
 int contadorRepeticion(char *str, char *buscar);
 void removerPalabra(char *, const char);
+
 
 void proper(){
 
@@ -45,7 +48,7 @@ void mostrarRepetir(){
 
     contador = contadorRepeticion(cadenaStr, buscar);
 
-    printf("Numero total de repeticiones de %s es %d", buscar, contador);
+    printf("Numero total de repeticiones de %s es %d\n", buscar, contador);
 }
 
 int contadorRepeticion(char *str,  char *buscar){
@@ -83,7 +86,7 @@ void mostrarEliminar(){
 
     removerPalabra(cadenaStr, eliminar);
 
-    printf("La cadena con la palabra eliminada es %s", cadenaStr);
+    printf("La cadena con la palabra eliminada es %s\n", cadenaStr);
 
 }
 
@@ -102,11 +105,43 @@ void removerPalabra(char *str, const char remover){
 
 }
 
+void mainMenu(){
+
+    char *menu = ">>>MENU PRINCIPAL<<<\n\n1. Option 1 Convertir en nombre Propio el contenido de una cadena\n"
+                 "2. Option 2 Numero de veces que existe una palabra en una cadena\n"
+                 "3. Option 3 Encriptar cadena\n4. Option 4 Desencriptar cadena\n5. Option 5 Llenar caracteres por izquierda o derecha\n"
+                 "6. Option 6 Borrar caracteres de una cadena\n7. Option 7 Interseccion entre dos cadenas\n"
+                 "8. Option 8 Diferencia entre dos cadenas\n9. Option 9 Borrar caracteres izquierda o derecha\n"
+                 "10. Salir\nDigite Opcion...\n";
+    int option;
+
+    do {
+        printf("%s", menu);
+        scanf("%d", &option);
+
+        switch (option) {
+            case 1: proper();
+                break;
+
+            case 2: mostrarRepetir();
+                break;
+
+            case 6: mostrarEliminar();
+                break;
+
+            case 10: printf("Saliendo\n");
+                exit(0);
+
+            default: printf("Opcion invalida");
+                break;
+        }
+
+    }while (option != 10);
+
+}
+
 int main() {
-   // mostrarRepetir();
-   // proper();
-    mostrarEliminar();
+    mainMenu();
 
     return 0;
 }
-
