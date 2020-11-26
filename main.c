@@ -15,7 +15,7 @@ void proper(){
     int i;
 
     printf("Ingrese la cadena:\n");
-    scanf("%[^\n]s", cadenaStr);
+    scanf("%[^\n]s", &cadenaStr);
 
     for (i = 0; cadenaStr[i] != '\0'; i++) {
         if (i==0) {
