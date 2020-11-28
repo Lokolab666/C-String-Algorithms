@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define NO_OF_CHARS 256
 #define MAXSTRING 1000
 
 char cadenaStr[MAXSTRING] = {0};
@@ -12,6 +11,7 @@ void removerPalabra(char *, const char);
 
 
 void proper(){
+
     int i;
 
     printf("Ingrese la cadena:\n");
@@ -105,125 +105,7 @@ void removerPalabra(char *str, const char remover){
 
 }
 
-char* remove_repeatation(char *str)
-{
-    char flag[256] = {0};
-    int  i            = 0;
-    int  j            = 0;
-
-    for(i=0; str[i] != '\0'; i++)
-    {
-        if(0 == flag[str[i]])
-        {
-            flag[str[i]] = 1;
-            str[j] = str[i];
-            j++;
-        }
-    }
-    str[j] = '\0';
-    return *str;
-}
-
-void interseccion() {
-
-    int i, j, k = 0;
-
-    char str1[NO_OF_CHARS];
-    char str2[NO_OF_CHARS];
-    char str3[NO_OF_CHARS];
-
-    printf("ingrese la cadena 1: ");
-    scanf("%s", &str1);
-
-
-    printf("Ingrese la cadena 2: ");
-    scanf("%s", &str2);
-
-    int len1 = strlen(str1);
-    int len2 = strlen(str2);
-
-    for (i = 0; i < len1; i++) {
-        for (j = 0; j < len2; j++) {
-            if (str1[i] == str2[j]) {
-                str3[k] = str1[i];
-                k++;
-            }
-        }
-    }
-
-    str3[k] = '\0';
-    remove_repeatation(str3);
-    printf("\nLa interseccion de las dos cadenas es:%s", str3);
-    printf("\n");
-}
-
-int diferenciarStrings(){
-
-    char str1[NO_OF_CHARS];
-    char str2[NO_OF_CHARS];
-    char str_rem[NO_OF_CHARS];
-    int i = 0, j = 0, k = 0;
-
-    printf("ingrese la cadena 1: ");
-    scanf("%s", &str1);
-
-
-    printf("Ingrese la cadena 2: ");
-    scanf("%s", &str2);
-
-    for (i = 0; str1[i] != '\0'; i++)    {
-        for (j = 0; str2[j] != '\0'; j++){
-            if (str1[i] == str2[j]){
-                continue;
-            }
-            else{
-                str_rem[k] = str2[j];
-                k ++;
-            }
-        }
-        str_rem[k] = '\0';
-        strcpy (str2, str_rem);
-        k = 0;
-    }
-
-    printf ("Los caracteres distintos de la cadena 2 a la 1 son: %s\n", str_rem);
-    printf("\n");
-
-    return 0;
-}
-
-int *getCharCountArray(char *str){
-    int *count = (int *)calloc(sizeof(int), NO_OF_CHARS);
-    int i;
-    for (i = 0; *(str+i);  i++)
-        count[*(str+i)]++;
-    return count;
-}
-
-void *removeDirtyChars(char *str,char *mask_str) {
-    int *count  = getCharCountArray(mask_str);
-    int ip_ind  = 0, res_ind = 0;
-    while (*(str + ip_ind))
-    {
-        char temp = *(str + ip_ind);
-        if (count[temp] == 0)
-        {
-            *(str + res_ind) = *(str + ip_ind);
-            res_ind++;
-        }
-        ip_ind++;
-    }
-
-    *(str+res_ind) = '\0';
-
-    printf("El resultado es: %s",str);
-    printf("\n");
-}
-
 void mainMenu(){
-
-    char str[NO_OF_CHARS];
-    char mask_str[NO_OF_CHARS];
 
     char *menu = ">>>MENU PRINCIPAL<<<\n\n1. Option 1 Convertir en nombre Propio el contenido de una cadena\n"
                  "2. Option 2 Numero de veces que existe una palabra en una cadena\n"
@@ -238,32 +120,18 @@ void mainMenu(){
         printf("%s", menu);
         scanf("%d", &option);
         fflush(stdin);
-
+        
         switch (option) {
-            case 1:
-                proper();
+            case 1: proper();
                 break;
-            case 2:
-                mostrarRepetir();
-                break;
-            case 6:
-                mostrarEliminar();
-                break;
-            case 7:
-                interseccion();
-                break;
-            case 8:
-                diferenciarStrings();
-                break;
-            case 9:
-                printf("cadena 1:");
-                scanf("%s", &str);
 
-                printf("Cadena 2:");
-                scanf("%s", &mask_str);
-                removeDirtyChars(str,mask_str);
+            case 2: mostrarRepetir();
                 break;
-            case 10: printf("Saliendo...\n");
+
+            case 6: mostrarEliminar();
+                break;
+
+            case 10: printf("Saliendo\n");
                 exit(0);
 
             default: printf("Opcion invalida");
@@ -271,9 +139,11 @@ void mainMenu(){
         }
 
     }while (option != 10);
+
 }
 
 int main() {
     mainMenu();
+
     return 0;
 }
