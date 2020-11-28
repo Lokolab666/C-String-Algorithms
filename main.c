@@ -220,6 +220,40 @@ void *removeDirtyChars(char *str,char *mask_str) {
     printf("\n");
 }
 
+void showRepetition(){
+    int longitudString, contador, optionIzDer;
+    char agregar;
+
+    printf("Ingrese la cadena:\n");
+    gets(cadenaStr);
+    printf("Ingrese la palabra a repetir:\n");
+    agregar = getchar();
+
+    longitudString = strlen(cadenaStr);
+
+    for (int i = 0; i < longitudString; ++i) {
+        if (cadenaStr[i] == agregar){
+           contador++;
+        }
+    }
+
+    printf("Digite 1 si es por izquierda o 2 si es por derecha:\n");
+    scanf("%d", &optionIzDer);
+
+    if (optionIzDer == 1){
+        for (int i = 0; i < contador+1; ++i) {
+            printf("%c", agregar);
+        }
+        printf("%s\n", cadenaStr);
+    }if (optionIzDer == 2){
+        printf("%s", cadenaStr);
+        for (int i = 0; i < contador+1; ++i) {
+            printf("%c", agregar);
+        }
+    }
+
+}
+
 void mainMenu(){
 
     char str[NO_OF_CHARS];
@@ -245,6 +279,8 @@ void mainMenu(){
                 break;
             case 2:
                 mostrarRepetir();
+                break;
+            case 5: showRepetition();
                 break;
             case 6:
                 mostrarEliminar();
