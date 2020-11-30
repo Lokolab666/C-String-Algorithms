@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Felipe/CLionProjects/C-String-Algorithms/main.c
+C:/Users/lenovo/Documents/GitHub/C-String-Algorithms/main.c
 stdio.h
 -
 string.h
 -
 stdlib.h
+-
+ctype.h
 -
 
