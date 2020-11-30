@@ -15,8 +15,6 @@ const char *alfabetoMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 char cadenaStr[MAXSTRING] = {0};
 
 int contadorRepeticion(char *str, char *buscar);
-void removerPalabra(char *, const char);
-
 
 void proper(){
     int i;
@@ -46,7 +44,7 @@ void proper(){
 }
 
 void mostrarRepetir(){
-    char buscar[MAXSTRING];
+    char buscar[MAXSTRING] = "";
     int contador = 0;
 
     printf("Ingrese la cadena:\n");
@@ -70,10 +68,10 @@ int contadorRepeticion(char *str,  char *buscar){
 
     contadorAux = 0;
 
-    for (int i = 0; i < longitudString-longitudPalabra; ++i) {
+    for (int i = 0; i < longitudString; ++i) {
         encontrar = 1;
         for (int j = 0; j < longitudPalabra; ++j) {
-            if (str[i+j] != buscar[j]){
+            if (str[i+j] != buscar[j] && str[i+j] != buscar[j]-32 && str[i+j]-32 != buscar[j]){
                 encontrar = 0;
                 break;
             }
