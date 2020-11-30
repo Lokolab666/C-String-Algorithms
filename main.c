@@ -47,7 +47,7 @@ void proper(){
 
 void mostrarRepetir(){
     char buscar[MAXSTRING];
-    int contador;
+    int contador = 0;
 
     printf("Ingrese la cadena:\n");
     fflush(stdin);
